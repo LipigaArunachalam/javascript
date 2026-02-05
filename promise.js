@@ -28,7 +28,7 @@ function sample(){
         return resolve("egg");
        }
        else{
-        return reject("no egg");
+        return reject("no egg"); // since its false no egg is returned
        }
   });
 }
@@ -37,7 +37,7 @@ function cook(){
   sample().then((msg)=>{
     console.log(msg);
   }).catch((err)=>{
-    console.log(err);
+    console.log(err);   // it prints no egg here
   });
 }
 
@@ -60,16 +60,16 @@ function sample1(){
 
 async function cooked(){
   try{
-   let example = await sample1();
-    console.log(example);
-   } 
+   let example = await sample1();  // coz of this the whole fn is paused and the 
+    console.log(example);          // yeilding control is given to the eventloop
+   }                               // after the promise is returned it resumes
    catch(err){
-    console.log(err);
+    console.log(err);             //the remaining functions runs without blocking 
    }
 }
 
 cooked();
-console.log("last");
+console.log("last");       // its printed first before the promise
 
 
 //promise using await  same as synchronous
@@ -86,13 +86,13 @@ function sample1(){
   });
 }
   try{
-   let example = await sample1();
+   let example = await sample1();  // sice it not async fn it works like synchronous
     console.log(example);
    } 
    catch(err){
     console.log(err);
    }
-console.log("last");
+console.log("last");    // printed at the end after the promise
 
 
 

@@ -6,6 +6,9 @@ function Lap(brand, price, size){
     this.color = function(){
         return `${this.brand} is black`;
     };
+    // hello(){
+    //     console.log("hello world");    cant define methods like this 
+    // }                                  inside the constructor function
 }
 const lap1 = new Lap("dell", 20000, 30);
 const lap2 = new Lap("hp", 15000, 10);

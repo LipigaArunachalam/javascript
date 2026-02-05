@@ -69,3 +69,40 @@ user1 ={
     },
 };
 user1.greet();  
+
+
+
+// apply, bind, call
+
+const per1 ={
+    name : "lipiga",
+    age : 22,
+}
+const per2 = {
+    name : "kamali",
+    age : 24,
+}
+
+function greet (){
+    return "hello " + this.name ;
+}
+
+function greetings(city, ex){
+    return "hello " + this.name +" from "+ city+ ex;
+}
+
+let op1 = greet.call(per1);  // used to pass an obj as arguments to function
+console.log(op1);
+
+let op2 = greet.apply(per2);  // used to pass an obj as arguments to function
+console.log(op2);
+
+let op3 = greetings.call(per1,"hosur", "!!"); // along with obj can pass arguments
+console.log(op3);
+
+let op4 = greetings.apply(per2,["hosur", "!!"]); // along with obj can pass arguments in array
+console.log(op4);
+
+let g = greet.bind(per1);  // binds the function to a var for later use
+let res =g();
+console.log(res);

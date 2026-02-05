@@ -1,6 +1,6 @@
 function cooked(){
   try{
-   
+
     console.log(example); // example is not defined
    } 
    catch(err){

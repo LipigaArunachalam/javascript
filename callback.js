@@ -18,13 +18,13 @@ task1(task2);
 // 2 callback funstions
 
 function t1(callback){
-    console.log("t1 done");
-    callback();
+    console.log("t1 done");   // prints t1 done
+    callback();               // callback of t1 is printed then t2 is called
 }
 
 function t2(callback){
-    console.log("t2 done");
-    callback();
+    console.log("t2 done");    // ts done is printed
+    callback();                // callback of t2 is printed
 }
 
 t1(function(){
@@ -33,3 +33,12 @@ t1(function(){
         console.log("callback of t2");
     });
 })
+
+
+function call(callback, n,m){
+    callback(n,m);
+}
+function add(a,b){
+    console.log(a+b);
+}
+call(add,2,5);   // prints 7
