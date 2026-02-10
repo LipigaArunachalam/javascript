@@ -62,6 +62,12 @@ let nested = [1, [2, 3], [4, [5, 6]]];
 let flat = nested.flat(2); // flatten 2 levels
 console.log("Flattened:", flat);  // [1,2,3,4,5,6]
 
+// flat map
+let arr =[1,2,3,4,5,6,8,9,7];
+let res = arr.flatMap((data)=> [data, data*10]);
+console.log(res);
+
+
 //  Check if all values are > 0
 let allPositive = numbers.every(n => n > 0);
 console.log("All positive?", allPositive);  // true
